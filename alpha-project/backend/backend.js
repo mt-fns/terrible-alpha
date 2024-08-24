@@ -5,7 +5,7 @@ async function callAPI(prompt) {
     let output = "";
     const stream = await openai.chat.completions.create({
         model: "gpt-4o-mini",
-        messages: [{ role: "user", content: "can you include chat in every prompt: can you translate this to brainrot (ohio rizz, chat and stuff) (make it 2 or 3 sentences) : i want some milk but daddy" }],
+        messages: [{ role: "user", content: `can you include chat in every prompt: can you translate this to brainrot (ohio rizz, chat and stuff) (make it 2 or 3 sentences) : ${prompt}` }],
         stream: true,
     });
 
