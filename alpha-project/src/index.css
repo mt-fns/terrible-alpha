@@ -45,6 +45,7 @@ button {
   transition: border-color 0.25s;
   width: 60px;
 }
+
 button:hover {
   border-color: black;
 }
