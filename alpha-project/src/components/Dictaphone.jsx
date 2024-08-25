@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { callAPI } from '../../backend/backend';
+import { textToSpeech } from '../../backend/text_to_speech';
 const Dictaphone = () => {
   const [resultPending, setResultPending] = useState(false);
 
@@ -17,10 +18,14 @@ const Dictaphone = () => {
 
   const handleMicOff = () => {
     SpeechRecognition.stopListening();
-    setResultPending(true);
     callAPI(transcript).then(results => {
-      console.log(results);
-      setResultPending(false);
+      textToSpeech(results).then(objectUrl => {
+          const audio = new Audio(objectUrl);
+          audio.play();
+          setResultPending(false);
+          resetTranscript();
+        }
+      )
     })
   }
 

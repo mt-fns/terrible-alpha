@@ -10,8 +10,6 @@ function App() {
   return (
     <>
       <Dictaphone/>
-      {console.log("test")}
-      <Brain_Damage/>
     </>
   )
 }
