@@ -6,7 +6,7 @@ export async function textToSpeech(text) {
   const speechFile = "./src/assets/speech.mp3";
 
   const openai = new OpenAI({
-    apiKey: 'YOUR API KEY',
+    apiKey: 'API-KEY',
     dangerouslyAllowBrowser: true
   });
   const mp3 = await openai.audio.speech.create({

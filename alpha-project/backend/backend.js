@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 
 async function callAPI(prompt) {
-    const openai = new OpenAI({apiKey: "YOUR API KEY", dangerouslyAllowBrowser: true});
+    const openai = new OpenAI({apiKey: "API-KEY", dangerouslyAllowBrowser: true});
     let output = "";
     const stream = await openai.chat.completions.create({
         model: "gpt-4o-mini",
